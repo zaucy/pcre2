@@ -30,6 +30,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
+      - name: Autotools
+        run: apk add -no-cache automake autoconf libtool 
+        
       - name: Autogen
         run: ./autogen.sh
         
