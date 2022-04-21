@@ -19,8 +19,14 @@ jobs:
       - name: Build
         run: make
         
-      - name: Test
-        run: make check
+      - name: Test (main test script)
+        run: ./RunTest
+
+      - name: Test (JIT test program)
+        run: ./pcre2_jit_test
+
+      - name: Test (pcre2grep test script)
+        run: ./RunGrepTest
 
   alpine:
     name: alpine
@@ -31,7 +37,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Autotools
-        run: apk add --no-cache automake autoconf gcc libc-dev libtool make 
+        run: apk add --no-cache automake autoconf gcc libtool make musl-dev 
         
       - name: Autogen
         run: ./autogen.sh
@@ -42,5 +48,11 @@ jobs:
       - name: Build
         run: make
         
-      - name: Test
-        run: make check
+      - name: Test (main test script)
+        run: ./RunTest
+
+      - name: Test (JIT test program)
+        run: ./pcre2_jit_test
+
+      - name: Test (pcre2grep test script)
+        run: ./RunGrepTest
