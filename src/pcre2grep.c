@@ -2438,6 +2438,7 @@ if (pid == 0)
   }
 else if (pid > 0)
   {
+  (void)fflush(stdout); 
   (void)waitpid(pid, &result, 0);
   (void)fflush(stdout); 
   } 
