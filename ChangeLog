@@ -2,6 +2,14 @@ Change Log for PCRE2
 --------------------
 
 
+Version 10.41 xx-xxx-2022
+-------------------------
+
+1. Add fflush() after a fork callout in pcre2grep in an attempt to get its 
+output to be the same on all systems. This didn't actually succeed in its aim,
+but does no harm.
+
+
 Version 10.40 15-April-2022
 ---------------------------
 
